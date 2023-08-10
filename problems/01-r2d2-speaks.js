@@ -14,8 +14,20 @@
         pause for 400ms
 */
 
-function r2d2Speaks(code) {
-    // Your code here
+function r2d2Speaks(code, index = 0) {
+   if (index === code.length) {
+       return false;
+   }
+   if (code[index] === 0) {
+       setTimeout(() => {
+           console.log('beep');
+       }, 400)
+   } else if (code[index] === 1) {
+       setTimeout(() => {
+           console.log('boop');
+       }, 800)
+   }
+   return r2d2Speak(code, index + 1);
 }
 
 let code = [0, 1, 1, 0];
