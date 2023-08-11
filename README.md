@@ -32,3 +32,10 @@ tests, use the following commands:
   }
   ```
 
+```const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const mostFrequentVowel = function (words, counter = {}, index = 0) {
+  // Your code here
+  if (!VOWELS.includes(words[index])) {
+      return "";
+  }
+}```
