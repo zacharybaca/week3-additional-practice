@@ -9,11 +9,24 @@
     console.log(sort([14, 5, 10, 6, 3, 4, 21, 16, 9])); // prints [ 3, 4, 5, 6, 9, 10, 14, 16, 21 ]
 */
 
-function sort(nums, newArr = [], index = 0) {
-   if (nums.length <= 1) {
-       newArr.push(nums[index]);
-       return newArr;
-   }
+function sort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const pivot = arr[0];
+    const lesser = [];
+    const greater = [];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] <= pivot) {
+            lesser.push(arr[i]);
+        } else {
+            greater.push(arr[i]);
+        }
+    }
+
+    return [...sort(lesser), pivot, ...sort(greater)];
 }
 
 console.log(sort([])) // prints []
