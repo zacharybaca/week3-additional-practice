@@ -10,3 +10,24 @@ tests, use the following commands:
 2. `npm install` to install any dependencies
 3. `npm test` to run the test cases
 # week3-additional-practice
+
+# Code For Problem on Assessment
+```function printOuterNumsFirst(nums) {
+    if (nums.length === 0) return;
+
+    // extract the number from the beginning if the length of the array is even
+    // else, extract from the end
+    let num;
+    if (nums.length % 2 === 0) {
+      num = nums.shift();
+    } else {
+      num = nums.pop();
+    }
+
+    // print the extracted number
+    console.log(num);
+
+    // Make a recursive call with the modified nums array.
+    printOuterNumsFirst(nums);
+  }
+  ```
